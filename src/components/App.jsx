@@ -1,26 +1,14 @@
 import React from "react";
 import Login from "../components/login";
 
-var isLoggedIn = true;
+var isLoggedIn = false;
 
-function renderConditionally(){
-   
-    if (isLoggedIn === false){
-        return <h1>Hello</h1>
-    }else {
-        return <form className="form">
-                   <Login />
-                </form>
-    }
-    
-}
 
 function App() {
-  return (
-    <div className="container">
-      {renderConditionally()}
-      </div>
-    );
+  return <div className="container">{
+     isLoggedIn === true ? <h1>Hello</h1> : <Login /> 
+  }</div>
+
 }
 
 export default App;
